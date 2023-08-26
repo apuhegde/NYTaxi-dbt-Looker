@@ -1,0 +1,5 @@
+docker ps
+docker exec -it <container ID> bash
+docker compose down --volumes --rmi all --remove-orphans
+docker system prune --all
+docker system prune --all --volumes

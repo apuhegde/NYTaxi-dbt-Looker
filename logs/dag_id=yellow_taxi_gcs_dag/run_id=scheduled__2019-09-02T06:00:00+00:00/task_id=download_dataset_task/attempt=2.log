@@ -1,0 +1,51 @@
+[2023-06-09T20:05:42.047+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: yellow_taxi_gcs_dag.download_dataset_task scheduled__2019-09-02T06:00:00+00:00 [queued]>
+[2023-06-09T20:05:42.066+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: yellow_taxi_gcs_dag.download_dataset_task scheduled__2019-09-02T06:00:00+00:00 [queued]>
+[2023-06-09T20:05:42.067+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-09T20:05:42.067+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 2
+[2023-06-09T20:05:42.067+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-09T20:05:42.082+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): download_dataset_task> on 2019-09-02 06:00:00+00:00
+[2023-06-09T20:05:42.086+0000] {standard_task_runner.py:54} INFO - Started process 1363 to run task
+[2023-06-09T20:05:42.102+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'yellow_taxi_gcs_dag', 'download_dataset_task', 'scheduled__2019-09-02T06:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile.py', '--cfg-path', '/tmp/tmpofqz61i6']
+[2023-06-09T20:05:42.104+0000] {standard_task_runner.py:83} INFO - Job 25: Subtask download_dataset_task
+[2023-06-09T20:05:42.105+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile.py
+[2023-06-09T20:05:42.222+0000] {data_ingestion_gcs_multiFile.py:27} INFO - Dataset url is https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.csv.gz, local_home is /opt/***, parquet file is /opt/***/yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.parquet
+[2023-06-09T20:05:42.223+0000] {data_ingestion_gcs_multiFile.py:35} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-09T20:05:42.259+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-09T20:05:42.340+0000] {task_command.py:384} INFO - Running <TaskInstance: yellow_taxi_gcs_dag.download_dataset_task scheduled__2019-09-02T06:00:00+00:00 [running]> on host 3a78d9143ce8
+[2023-06-09T20:05:42.391+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-09T20:05:42.463+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=yellow_taxi_gcs_dag
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2019-09-02T06:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-09-02T06:00:00+00:00
+[2023-06-09T20:05:42.464+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-09T20:05:42.465+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -sSLf https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2019-09.csv.gz > /opt/***/yellow_tripdata_2019-09.csv.gz']
+[2023-06-09T20:05:42.475+0000] {subprocess.py:86} INFO - Output:
+[2023-06-09T20:06:07.334+0000] {local_task_job.py:228} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2023-06-09T20:06:07.338+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 1363. PIDs of all processes in the group: [1367, 1368, 1363]
+[2023-06-09T20:06:07.338+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 1363
+[2023-06-09T20:06:07.340+0000] {taskinstance.py:1562} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-06-09T20:06:07.342+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2023-06-09T20:06:07.349+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1368, status='terminated', started='20:05:42') (1368) terminated with exit code None
+[2023-06-09T20:06:07.371+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 191, in execute
+    cwd=self.cwd,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b''):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1564, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2023-06-09T20:06:07.379+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=yellow_taxi_gcs_dag, task_id=download_dataset_task, execution_date=20190902T060000, start_date=20230609T200542, end_date=20230609T200607
+[2023-06-09T20:06:07.394+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 25 for task download_dataset_task (Task received SIGTERM signal; 1363)
+[2023-06-09T20:06:07.450+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1367, status='terminated', started='20:05:42') (1367) terminated with exit code None
+[2023-06-09T20:06:07.452+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1363, status='terminated', exitcode=1, started='20:05:41') (1363) terminated with exit code 1

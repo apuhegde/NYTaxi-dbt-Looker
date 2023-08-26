@@ -1,0 +1,36 @@
+[2023-06-09T20:11:15.158+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: yellow_taxi_gcs_dag.purge_task scheduled__2019-02-02T06:00:00+00:00 [queued]>
+[2023-06-09T20:11:15.168+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: yellow_taxi_gcs_dag.purge_task scheduled__2019-02-02T06:00:00+00:00 [queued]>
+[2023-06-09T20:11:15.169+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-09T20:11:15.170+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-09T20:11:15.170+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-09T20:11:15.181+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): purge_task> on 2019-02-02 06:00:00+00:00
+[2023-06-09T20:11:15.186+0000] {standard_task_runner.py:54} INFO - Started process 1747 to run task
+[2023-06-09T20:11:15.189+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'yellow_taxi_gcs_dag', 'purge_task', 'scheduled__2019-02-02T06:00:00+00:00', '--job-id', '40', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile.py', '--cfg-path', '/tmp/tmpl84oew1z']
+[2023-06-09T20:11:15.190+0000] {standard_task_runner.py:83} INFO - Job 40: Subtask purge_task
+[2023-06-09T20:11:15.192+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile.py
+[2023-06-09T20:11:15.393+0000] {data_ingestion_gcs_multiFile.py:27} INFO - Dataset url is https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.csv.gz, local_home is /opt/***, parquet file is /opt/***/yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.parquet
+[2023-06-09T20:11:15.394+0000] {data_ingestion_gcs_multiFile.py:35} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-09T20:11:15.414+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-09T20:11:15.463+0000] {task_command.py:384} INFO - Running <TaskInstance: yellow_taxi_gcs_dag.purge_task scheduled__2019-02-02T06:00:00+00:00 [running]> on host 3a78d9143ce8
+[2023-06-09T20:11:15.491+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-09T20:11:15.523+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=yellow_taxi_gcs_dag
+AIRFLOW_CTX_TASK_ID=purge_task
+AIRFLOW_CTX_EXECUTION_DATE=2019-02-02T06:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-02-02T06:00:00+00:00
+[2023-06-09T20:11:15.525+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-09T20:11:15.526+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'rm /opt/***/yellow_tripdata_2019-02.csv.gz /opt/***/yellow_tripdata_2019-02.parquet']
+[2023-06-09T20:11:15.535+0000] {subprocess.py:86} INFO - Output:
+[2023-06-09T20:11:15.624+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-09T20:11:15.647+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=yellow_taxi_gcs_dag, task_id=purge_task, execution_date=20190202T060000, start_date=20230609T201115, end_date=20230609T201115
+[2023-06-09T20:11:15.685+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-06-09T20:11:15.701+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

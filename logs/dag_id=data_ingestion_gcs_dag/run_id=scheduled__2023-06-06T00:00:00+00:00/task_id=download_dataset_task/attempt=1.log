@@ -1,0 +1,33 @@
+[2023-06-07T00:00:01.471+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-06-06T00:00:00+00:00 [queued]>
+[2023-06-07T00:00:01.477+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-06-06T00:00:00+00:00 [queued]>
+[2023-06-07T00:00:01.478+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-07T00:00:01.478+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-07T00:00:01.479+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-07T00:00:01.486+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-06-06 00:00:00+00:00
+[2023-06-07T00:00:01.492+0000] {standard_task_runner.py:54} INFO - Started process 4584 to run task
+[2023-06-07T00:00:01.497+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'download_dataset_task', 'scheduled__2023-06-06T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs.py', '--cfg-path', '/tmp/tmpnjc5545s']
+[2023-06-07T00:00:01.499+0000] {standard_task_runner.py:83} INFO - Job 17: Subtask download_dataset_task
+[2023-06-07T00:00:01.501+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs.py
+[2023-06-07T00:00:01.524+0000] {data_ingestion_gcs.py:24} INFO - Dataset file is yellow_tripdata_2021-01.csv.gz, url is https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz, local_home is /opt/***, parquet file is yellow_tripdata_2021-01.parquet
+[2023-06-07T00:00:01.525+0000] {data_ingestion_gcs.py:32} INFO - dtc_data_lake_dtc-dezc-001 is the bucket,  dtc-dezc is the project name, dtc-dezc-001 is the project id, trips_data_all is the bigquery dataset.
+[2023-06-07T00:00:01.544+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-07T00:00:01.598+0000] {task_command.py:384} INFO - Running <TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-06-06T00:00:00+00:00 [running]> on host 1d8c795fd30d
+[2023-06-07T00:00:01.653+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-06-06T00:00:00+00:00
+[2023-06-07T00:00:01.655+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-07T00:00:01.656+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -sSL https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz > /opt/***/yellow_tripdata_2021-01.csv.gz']
+[2023-06-07T00:00:01.671+0000] {subprocess.py:86} INFO - Output:
+[2023-06-07T00:00:04.457+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-07T00:00:04.498+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=download_dataset_task, execution_date=20230606T000000, start_date=20230607T000001, end_date=20230607T000004
+[2023-06-07T00:00:04.547+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-06-07T00:00:04.576+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,109 @@
+[2023-06-11T01:36:47.584+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: yellow_taxi_data.local_to_gcs_task scheduled__2021-06-02T06:00:00+00:00 [queued]>
+[2023-06-11T01:36:47.591+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: yellow_taxi_data.local_to_gcs_task scheduled__2021-06-02T06:00:00+00:00 [queued]>
+[2023-06-11T01:36:47.591+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-11T01:36:47.592+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-11T01:36:47.592+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-11T01:36:47.600+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): local_to_gcs_task> on 2021-06-02 06:00:00+00:00
+[2023-06-11T01:36:47.604+0000] {standard_task_runner.py:54} INFO - Started process 7284 to run task
+[2023-06-11T01:36:47.608+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'yellow_taxi_data', 'local_to_gcs_task', 'scheduled__2021-06-02T06:00:00+00:00', '--job-id', '734', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile_v02.py', '--cfg-path', '/tmp/tmposh_zv31']
+[2023-06-11T01:36:47.609+0000] {standard_task_runner.py:83} INFO - Job 734: Subtask local_to_gcs_task
+[2023-06-11T01:36:47.610+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile_v02.py
+[2023-06-11T01:36:47.675+0000] {data_ingestion_gcs_multiFile_v02.py:20} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-11T01:36:47.690+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-11T01:36:47.729+0000] {task_command.py:384} INFO - Running <TaskInstance: yellow_taxi_data.local_to_gcs_task scheduled__2021-06-02T06:00:00+00:00 [running]> on host f41d61956f54
+[2023-06-11T01:36:47.752+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-11T01:36:47.783+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=yellow_taxi_data
+AIRFLOW_CTX_TASK_ID=local_to_gcs_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-02T06:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-02T06:00:00+00:00
+[2023-06-11T01:36:48.902+0000] {data_ingestion_gcs_multiFile_v02.py:47} INFO - Blob is <Blob: dtc_data_lake_dtc-dezc-001, raw/yellow_tripdata/2021/yellow_tripdata_2021-06.parquet, None>
+[2023-06-11T01:37:06.492+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 288, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 499, in send
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 288, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_gcs_multiFile_v02.py", line 48, in upload_to_gcs
+    blob.upload_from_filename(local_file)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2735, in upload_from_filename
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2594, in upload_from_file
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2412, in _do_upload
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2242, in _do_resumable_upload
+    response = upload.transmit_next_chunk(transport, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/upload.py", line 516, in transmit_next_chunk
+    retriable_request, self._get_status_code, self._retry_strategy
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/_request_helpers.py", line 171, in wait_and_retry
+    raise error
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/_request_helpers.py", line 148, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/upload.py", line 508, in retriable_request
+    method, url, data=payload, headers=headers, timeout=timeout
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/auth/transport/requests.py", line 555, in request
+    **kwargs
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2023-06-11T01:37:06.526+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=yellow_taxi_data, task_id=local_to_gcs_task, execution_date=20210602T060000, start_date=20230611T013647, end_date=20230611T013706
+[2023-06-11T01:37:06.589+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 734 for task local_to_gcs_task (('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')); 7284)
+[2023-06-11T01:37:06.705+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-06-11T01:37:06.737+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

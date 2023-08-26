@@ -1,0 +1,70 @@
+[2023-06-10T01:45:52.767+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: fhv_taxi_data.download_dataset_task scheduled__2020-04-02T07:00:00+00:00 [queued]>
+[2023-06-10T01:45:52.773+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: fhv_taxi_data.download_dataset_task scheduled__2020-04-02T07:00:00+00:00 [queued]>
+[2023-06-10T01:45:52.774+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-10T01:45:52.774+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-10T01:45:52.775+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-10T01:45:52.790+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): download_dataset_task> on 2020-04-02 07:00:00+00:00
+[2023-06-10T01:45:52.799+0000] {standard_task_runner.py:54} INFO - Started process 2538 to run task
+[2023-06-10T01:45:52.804+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'fhv_taxi_data', 'download_dataset_task', 'scheduled__2020-04-02T07:00:00+00:00', '--job-id', '119', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile_v02.py', '--cfg-path', '/tmp/tmpnphduj1z']
+[2023-06-10T01:45:52.805+0000] {standard_task_runner.py:83} INFO - Job 119: Subtask download_dataset_task
+[2023-06-10T01:45:52.806+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile_v02.py
+[2023-06-10T01:45:52.879+0000] {data_ingestion_gcs_multiFile_v02.py:20} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-10T01:45:52.896+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-10T01:45:52.941+0000] {task_command.py:384} INFO - Running <TaskInstance: fhv_taxi_data.download_dataset_task scheduled__2020-04-02T07:00:00+00:00 [running]> on host f41d61956f54
+[2023-06-10T01:45:52.969+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-10T01:45:53.008+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=fhv_taxi_data
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2020-04-02T07:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-04-02T07:00:00+00:00
+[2023-06-10T01:45:53.009+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-10T01:45:53.011+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -sSLf https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/fhv/fhv_tripdata_2020-04.csv.gz > /opt/***/fhv_tripdata_2020-04.csv.gz']
+[2023-06-10T01:45:53.025+0000] {subprocess.py:86} INFO - Output:
+[2023-06-10T01:45:53.609+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-10T01:45:53.636+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=fhv_taxi_data, task_id=download_dataset_task, execution_date=20200402T070000, start_date=20230610T014552, end_date=20230610T014553
+[2023-06-10T01:45:53.662+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-06-10T01:45:53.684+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-06-11T01:34:19.528+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: fhv_taxi_data.download_dataset_task scheduled__2020-04-02T07:00:00+00:00 [queued]>
+[2023-06-11T01:34:19.535+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: fhv_taxi_data.download_dataset_task scheduled__2020-04-02T07:00:00+00:00 [queued]>
+[2023-06-11T01:34:19.536+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-11T01:34:19.536+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-11T01:34:19.537+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-11T01:34:19.544+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): download_dataset_task> on 2020-04-02 07:00:00+00:00
+[2023-06-11T01:34:19.548+0000] {standard_task_runner.py:54} INFO - Started process 6875 to run task
+[2023-06-11T01:34:19.551+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'fhv_taxi_data', 'download_dataset_task', 'scheduled__2020-04-02T07:00:00+00:00', '--job-id', '691', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile_v02.py', '--cfg-path', '/tmp/tmp971ywymv']
+[2023-06-11T01:34:19.552+0000] {standard_task_runner.py:83} INFO - Job 691: Subtask download_dataset_task
+[2023-06-11T01:34:19.553+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile_v02.py
+[2023-06-11T01:34:19.613+0000] {data_ingestion_gcs_multiFile_v02.py:20} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-11T01:34:19.630+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-11T01:34:19.670+0000] {task_command.py:384} INFO - Running <TaskInstance: fhv_taxi_data.download_dataset_task scheduled__2020-04-02T07:00:00+00:00 [running]> on host f41d61956f54
+[2023-06-11T01:34:19.693+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-11T01:34:19.721+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=fhv_taxi_data
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2020-04-02T07:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-04-02T07:00:00+00:00
+[2023-06-11T01:34:19.722+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-11T01:34:19.722+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -sSLf https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2020-04.csv.gz > /opt/***/fhv_tripdata_2020-04.csv.gz']
+[2023-06-11T01:34:19.732+0000] {subprocess.py:86} INFO - Output:
+[2023-06-11T01:34:21.389+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-11T01:34:21.414+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=fhv_taxi_data, task_id=download_dataset_task, execution_date=20200402T070000, start_date=20230611T013419, end_date=20230611T013421
+[2023-06-11T01:34:21.453+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-06-11T01:34:21.477+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

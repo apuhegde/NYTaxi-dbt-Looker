@@ -1,0 +1,75 @@
+[2023-06-10T02:11:29.835+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: green_taxi_data.format_to_parquet_task scheduled__2021-06-02T06:30:00+00:00 [queued]>
+[2023-06-10T02:11:29.851+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: green_taxi_data.format_to_parquet_task scheduled__2021-06-02T06:30:00+00:00 [queued]>
+[2023-06-10T02:11:29.852+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-10T02:11:29.854+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-10T02:11:29.855+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-10T02:11:29.881+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): format_to_parquet_task> on 2021-06-02 06:30:00+00:00
+[2023-06-10T02:11:29.891+0000] {standard_task_runner.py:54} INFO - Started process 4342 to run task
+[2023-06-10T02:11:29.904+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'green_taxi_data', 'format_to_parquet_task', 'scheduled__2021-06-02T06:30:00+00:00', '--job-id', '212', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile_v02.py', '--cfg-path', '/tmp/tmpoeagv5_8']
+[2023-06-10T02:11:29.905+0000] {standard_task_runner.py:83} INFO - Job 212: Subtask format_to_parquet_task
+[2023-06-10T02:11:29.908+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile_v02.py
+[2023-06-10T02:11:30.053+0000] {data_ingestion_gcs_multiFile_v02.py:20} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-10T02:11:30.087+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-10T02:11:30.169+0000] {task_command.py:384} INFO - Running <TaskInstance: green_taxi_data.format_to_parquet_task scheduled__2021-06-02T06:30:00+00:00 [running]> on host f41d61956f54
+[2023-06-10T02:11:30.207+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-10T02:11:30.259+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=green_taxi_data
+AIRFLOW_CTX_TASK_ID=format_to_parquet_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-02T06:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-02T06:30:00+00:00
+[2023-06-10T02:11:30.376+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_gcs_multiFile_v02.py", line 33, in format_to_parquet
+    table = pv.read_csv(src_file)
+  File "pyarrow/_csv.pyx", line 886, in pyarrow._csv.read_csv
+  File "pyarrow/_csv.pyx", line 895, in pyarrow._csv.read_csv
+  File "pyarrow/error.pxi", line 143, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 114, in pyarrow.lib.check_status
+OSError: zlib inflate failed: incorrect header check
+[2023-06-10T02:11:30.391+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=green_taxi_data, task_id=format_to_parquet_task, execution_date=20210602T063000, start_date=20230610T021129, end_date=20230610T021130
+[2023-06-10T02:11:30.399+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 212 for task format_to_parquet_task (zlib inflate failed: incorrect header check; 4342)
+[2023-06-10T02:11:30.446+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-06-10T02:11:30.474+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-06-11T01:15:13.947+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: green_taxi_data.format_to_parquet_task scheduled__2021-06-02T06:30:00+00:00 [queued]>
+[2023-06-11T01:15:13.953+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: green_taxi_data.format_to_parquet_task scheduled__2021-06-02T06:30:00+00:00 [queued]>
+[2023-06-11T01:15:13.953+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-11T01:15:13.954+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-11T01:15:13.954+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-11T01:15:13.962+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): format_to_parquet_task> on 2021-06-02 06:30:00+00:00
+[2023-06-11T01:15:13.967+0000] {standard_task_runner.py:54} INFO - Started process 4900 to run task
+[2023-06-11T01:15:13.971+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'green_taxi_data', 'format_to_parquet_task', 'scheduled__2021-06-02T06:30:00+00:00', '--job-id', '530', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile_v02.py', '--cfg-path', '/tmp/tmp6u99jlfx']
+[2023-06-11T01:15:13.972+0000] {standard_task_runner.py:83} INFO - Job 530: Subtask format_to_parquet_task
+[2023-06-11T01:15:13.973+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile_v02.py
+[2023-06-11T01:15:14.036+0000] {data_ingestion_gcs_multiFile_v02.py:20} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-11T01:15:14.052+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-11T01:15:14.094+0000] {task_command.py:384} INFO - Running <TaskInstance: green_taxi_data.format_to_parquet_task scheduled__2021-06-02T06:30:00+00:00 [running]> on host f41d61956f54
+[2023-06-11T01:15:14.117+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-11T01:15:14.146+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=green_taxi_data
+AIRFLOW_CTX_TASK_ID=format_to_parquet_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-02T06:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-02T06:30:00+00:00
+[2023-06-11T01:15:14.289+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-06-11T01:15:14.299+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=green_taxi_data, task_id=format_to_parquet_task, execution_date=20210602T063000, start_date=20230611T011513, end_date=20230611T011514
+[2023-06-11T01:15:14.345+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-06-11T01:15:14.368+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

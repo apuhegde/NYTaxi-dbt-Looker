@@ -1,0 +1,44 @@
+[2023-06-10T02:47:17.792+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: fhv_taxi_data.format_to_parquet_task scheduled__2023-03-02T07:00:00+00:00 [queued]>
+[2023-06-10T02:47:17.803+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: fhv_taxi_data.format_to_parquet_task scheduled__2023-03-02T07:00:00+00:00 [queued]>
+[2023-06-10T02:47:17.804+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-10T02:47:17.805+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2023-06-10T02:47:17.805+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-10T02:47:17.819+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): format_to_parquet_task> on 2023-03-02 07:00:00+00:00
+[2023-06-10T02:47:17.822+0000] {standard_task_runner.py:54} INFO - Started process 6812 to run task
+[2023-06-10T02:47:17.829+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'fhv_taxi_data', 'format_to_parquet_task', 'scheduled__2023-03-02T07:00:00+00:00', '--job-id', '336', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcs_multiFile_v02.py', '--cfg-path', '/tmp/tmpd4qbdgkv']
+[2023-06-10T02:47:17.830+0000] {standard_task_runner.py:83} INFO - Job 336: Subtask format_to_parquet_task
+[2023-06-10T02:47:17.831+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/data_ingestion_gcs_multiFile_v02.py
+[2023-06-10T02:47:17.973+0000] {data_ingestion_gcs_multiFile_v02.py:20} INFO - dtc_data_lake_dtc-dezc-001 is the bucket.
+[2023-06-10T02:47:17.992+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-06-10T02:47:18.047+0000] {task_command.py:384} INFO - Running <TaskInstance: fhv_taxi_data.format_to_parquet_task scheduled__2023-03-02T07:00:00+00:00 [running]> on host f41d61956f54
+[2023-06-10T02:47:18.080+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:204: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-06-10T02:47:18.119+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=fhv_taxi_data
+AIRFLOW_CTX_TASK_ID=format_to_parquet_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-02T07:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-03-02T07:00:00+00:00
+[2023-06-10T02:47:18.231+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_gcs_multiFile_v02.py", line 33, in format_to_parquet
+    table = pv.read_csv(src_file)
+  File "pyarrow/_csv.pyx", line 886, in pyarrow._csv.read_csv
+  File "pyarrow/_csv.pyx", line 895, in pyarrow._csv.read_csv
+  File "pyarrow/error.pxi", line 143, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 114, in pyarrow.lib.check_status
+OSError: zlib inflate failed: incorrect header check
+[2023-06-10T02:47:18.246+0000] {taskinstance.py:1406} INFO - Marking task as UP_FOR_RETRY. dag_id=fhv_taxi_data, task_id=format_to_parquet_task, execution_date=20230302T070000, start_date=20230610T024717, end_date=20230610T024718
+[2023-06-10T02:47:18.259+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 336 for task format_to_parquet_task (zlib inflate failed: incorrect header check; 6812)
+[2023-06-10T02:47:18.319+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-06-10T02:47:18.339+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
