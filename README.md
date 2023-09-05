@@ -4,3 +4,6 @@ This is an ELT pipeline I built to download NYC Taxi and Limousine Commission da
 
 The major portion of this project has been done under the guidance of the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) course on GitHub and Alvaro Navas Peire's [notes](https://github.com/ziritrion/dataeng-zoomcamp).
 
+## Analysis dashboard
+
+! [Analysis of NYC Taxi and Limousine Commision's For-Hire-Vehicle trips](NYC_taxi_trips_analysis_(2019-2020).pdf)
