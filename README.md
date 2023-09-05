@@ -6,4 +6,4 @@ The major portion of this project has been done under the guidance of the [Data 
 
 ## Analysis dashboard
 
-! [Analysis of NYC Taxi and Limousine Commision's For-Hire-Vehicle trips](NYC_taxi_trips_analysis_(2019-2020).pdf)
+! [Analysis of NYC Taxi and Limousine Commision's For-Hire-Vehicle trips](NYTaxi_FHV_analysis.png)
